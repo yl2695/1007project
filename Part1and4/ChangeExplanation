@@ -1,0 +1,44 @@
+Changes:
+
+1.
+Add InputCheck.py. This module includes two classes RestaurantName and StateName.
+These two classes are used to check the validity of the input for restaurant names and State names.
+So far I think RestaurantName can be deleted, I will explain this to you in the second section-Problems.
+
+2.
+Add RestAndStateNameCheckFuncs.py This module includes two functions: IsValidString and IsValidState.
+These two functions are used in the two classes, RestaurantName and StateName, located under InputCheck.py
+
+3.
+Change names: SearchByNameMain.py -> SearchRestaurantsByName.py
+
+4.
+Change names: SearchFuncsExceptions.py -> Part1and4Exceptions.py
+
+5.
+Changes in Part1and4Exceptions.py:
+ NameSearchNoResultError         unchanged 
+StateSearchNoResultError        unchanged 
+add InputNotStringError 
+add RestNameContainNonAlphaError 
+add StateNotStringError 
+add StateNameContainNonAlphaError 
+add  InvalidStateNameError
+add NoValidPieChartForOneStateError
+
+——————————————————————————————————————————
+Problems:
+1.
+Bugs in unittest (3 failes in StateNameTests and I still have no clue)
+
+2.
+RestaurantName() still can’t handle some input correctly, cause some restaurants’ names have non alphabetic characters
+such as - ‘ & # and numbers, which is hard to handle.  So I suppose that I can just ignore the input check for the
+restaurants’ names and search for the input directly. However, there are also some bugs here.
+For example: if you type in $ and then search, you will get too many results and none of them seems to have the special
+character $.
+
+——————————————————————————————————————————
+Remark:
+PieChartForOneState(state) can only apply to six states, I have added an exception for the invalid state values.
+Please note this, and change the corresponding codes in guy.py
