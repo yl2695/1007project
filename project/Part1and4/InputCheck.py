@@ -1,5 +1,3 @@
-__author__ = 'chianti'
-
 from RestAndStateNameCheckFuncs import *
 from Part1and4Exceptions import *
 

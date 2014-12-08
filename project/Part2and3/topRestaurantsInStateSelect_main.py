@@ -29,11 +29,7 @@ def main():
 		except (InputError, ValueError):
 			print 'Invalid input, please follow the instruction. '
 			
-<<<<<<< HEAD:project/Part2and3/topRestaurantsInStateSelect_main.py
 		except (KeyboardInterrupt, IOError):
-=======
-		except (KeyboardInterrupt,IOError):
->>>>>>> ae4b115e4c3caccbecedb58cfcef25467aa17032:project/Part2and3/topRestaurantsInStateSelect_main.py
 			print 'Thanks for using. '
 			sys.exit()
 		

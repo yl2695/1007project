@@ -1,5 +1,3 @@
-__author__ = 'chianti'
-
 from Part1and4.Part1and4Exceptions import *
 
 
@@ -19,7 +17,7 @@ def NameSearch(df, partial_name):
         raise NameSearchNoResultError('Sorry, no result. Try another name ?')
 
     else:
-        return search_result
+        return search_result[:16]
 
 
 def GetUsefulInfo(df):
