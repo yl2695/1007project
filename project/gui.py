@@ -4,8 +4,8 @@ import numpy as np
 from Part1and4.SearchByNameFuncs import *
 from Part1and4.PlotDistributionFuncs import *
 import pandas as pd
-from Part2and3.question2 import *
-from Part2and3.question3 import *
+from Part2and3.topRestaurantInStateAndPriceSelect import *
+from Part2and3.topRestaurantsInStateSelect import *
 
 
 data = pd.read_csv('yelp_restaurant_only_dataset.csv')
@@ -238,7 +238,7 @@ def overallInformationWindow():
     stateListbox = Listbox(overallInformationWindow)
     stateListbox.pack()
     stateListbox.place(relx=0.2, rely=0.4)
-    for item in ['ON', 'ELN', 'EDH', 'MLN', 'WI', 'NY', 'KHL', 'AZ', 'CA', 'NV']:
+    for item in ['ON', 'EDH', 'MLN', 'WI', 'AZ', 'NV']:
         stateListbox.insert(END, item)
 
     # initialize a select state button for user to select a certain state they want to see
@@ -247,45 +247,29 @@ def overallInformationWindow():
     selectButtonLabel.place(relx=0.05, rely=0.33)
 
     # initialize every state's show button
-    bON = Button(overallInformationWindow, text='ON state', command=lambda x='ON':PlotPieChartForOneState(x))
-    bON.pack()
-    bON.place(relx=0.5, rely=0.4)
+    buttonON = Button(overallInformationWindow, text='ON state', command=lambda x='ON':PlotPieChartForOneState(x))
+    buttonON.pack()
+    buttonON.place(relx=0.5, rely=0.4)
 
-    bELN = Button(overallInformationWindow, text='ELN state', command=lambda x='ELN':PlotPieChartForOneState(x))
-    bELN.pack()
-    bELN.place(relx=0.5, rely=0.46)
+    buttonEDH = Button(overallInformationWindow, text='EDH state', command=lambda x='EDH':PlotPieChartForOneState(x))
+    buttonEDH.pack()
+    buttonEDH.place(relx=0.5, rely=0.52)
 
-    bEDH = Button(overallInformationWindow, text='EDH state', command=lambda x='EDH':PlotPieChartForOneState(x))
-    bEDH.pack()
-    bEDH.place(relx=0.5, rely=0.52)
+    buttonMLN = Button(overallInformationWindow, text='MLN state', command=lambda x='MLN':PlotPieChartForOneState(x))
+    buttonMLN.pack()
+    buttonMLN.place(relx=0.7, rely=0.4)
 
-    bMLN = Button(overallInformationWindow, text='MLN state', command=lambda x='MLN':PlotPieChartForOneState(x))
-    bMLN.pack()
-    bMLN.place(relx=0.5, rely=0.58)
+    buttonWI = Button(overallInformationWindow, text='WI state', command=lambda x='WI':PlotPieChartForOneState(x))
+    buttonWI.pack()
+    buttonWI.place(relx=0.5, rely=0.64)
 
-    bWI = Button(overallInformationWindow, text='WI state', command=lambda x='WI':PlotPieChartForOneState(x))
-    bWI.pack()
-    bWI.place(relx=0.5, rely=0.64)
+    buttonAZ = Button(overallInformationWindow, text='AZ state', command=lambda x='AZ':PlotPieChartForOneState(x))
+    buttonAZ.pack()
+    buttonAZ.place(relx=0.7, rely=0.52)
 
-    bNY = Button(overallInformationWindow, text='NY state', command=lambda x='NY':PlotPieChartForOneState(x))
-    bNY.pack()
-    bNY.place(relx=0.7, rely=0.4)
-
-    bKHL = Button(overallInformationWindow, text='KHL state', command=lambda x='KHL':PlotPieChartForOneState(x))
-    bKHL.pack()
-    bKHL.place(relx=0.7, rely=0.46)
-
-    bAZ = Button(overallInformationWindow, text='AZ state', command=lambda x='AZ':PlotPieChartForOneState(x))
-    bAZ.pack()
-    bAZ.place(relx=0.7, rely=0.52)
-
-    bCA = Button(overallInformationWindow, text='CA state', command=lambda x='CA':PlotPieChartForOneState(x))
-    bCA.pack()
-    bCA.place(relx=0.7, rely=0.58)
-
-    bNV = Button(overallInformationWindow, text='NV state', command=lambda x='NV':PlotPieChartForOneState(x))
-    bNV.pack()
-    bNV.place(relx=0.7, rely=0.64)
+    buttonNV = Button(overallInformationWindow, text='NV state', command=lambda x='NV':PlotPieChartForOneState(x))
+    buttonNV.pack()
+    buttonNV.place(relx=0.7, rely=0.64)
 
 def main():
     '''
