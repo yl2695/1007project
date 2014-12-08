@@ -242,7 +242,7 @@ class mainWindow():
             mylabel.place(relx=0.2, rely=0.5)
 
         except:
-            errorlabel = Label(self.nameSearchWindow, text="Sorry, Find No Restaurant of This Name!")
+            errorlabel = Label(self.nameSearchWindow, text="Sorry, Find No Restaurant of This Name, please try another name")
             errorlabel.place(relx=0.2,rely=0.45)
 
 
@@ -268,7 +268,7 @@ class mainWindow():
             restaurantLabel = Label(self.popularRestaurantsWindow, text=restaurantsMoreInformation(topRestaurantsInState(stateText, int(numText))))
             restaurantLabel.place(relx=0.1, rely=0.55)
         except:
-            errorLabel = Label(self.popularRestaurantsWindow, text="Sorry, there isn't such a state in the dataset.")
+            errorLabel = Label(self.popularRestaurantsWindow, text="Sorry, there isn't such a state in the dataset, please try another state.")
             errorLabel.place(relx=0.1,rely=0.52)
 
 
