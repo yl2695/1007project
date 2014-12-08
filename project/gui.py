@@ -214,13 +214,13 @@ def expenseSearchWindow():
         numText = numMent.get()
         try:
             data = restaurantInStateandPrice(stateText2, int(priceRangeText), int(numText))
-            restaurantStarsPlot(data)
+            restaurantRegionPlot(data)
         except:
             pass
 
     plotButton = Button(expenseSearchWindow, text='plot', command=plotRestaurantRegion)
     plotButton.pack()
-    plotButton.place(relx=0.7, rely=0.69)
+    plotButton.place(relx=0.65, rely=0.69)
 
     # initialize the function for clear button
     def new_canvas():
