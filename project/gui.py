@@ -106,7 +106,7 @@ def popularRestaurantsWindow():
             restaurantLabel.place(relx=0.1, rely=0.55)
         except:
             errorLabel = Label(popularRestaurantsWindow, text="Sorry, there isn't such a state in the dataset.")
-            errorLabel.place(relx=0.1,rely=0.50)
+            errorLabel.place(relx=0.1,rely=0.52)
 
     # initialize the show button
     showButton = Button(popularRestaurantsWindow, text="Show", command=showTopRestaurants)
@@ -128,8 +128,12 @@ def popularRestaurantsWindow():
     def plotTopRestaurants():
         numText = numMent.get()
         stateText = stateMent.get()
-        data = topRestaurantsInState(stateText, int(numText))
-        restaurantStarsPlot(data)
+
+        try:
+            data = topRestaurantsInState(stateText, int(numText))
+            restaurantStarsPlot(data)
+        except:
+            pass
 
     # initialize the plot button.
     plotButton = Button(popularRestaurantsWindow, text='plot', command=plotTopRestaurants)
@@ -204,6 +208,20 @@ def expenseSearchWindow():
     showPriceRangeRestaurantButton.pack()
     showPriceRangeRestaurantButton.place(relx=0.1, rely=0.69)
 
+    def plotRestaurantRegion():
+        stateText2 = stateMent.get()
+        priceRangeText = priceRangeMent.get()
+        numText = numMent.get()
+        try:
+            data = restaurantInStateandPrice(stateText2, int(priceRangeText), int(numText))
+            restaurantStarsPlot(data)
+        except:
+            pass
+
+    plotButton = Button(expenseSearchWindow, text='plot', command=plotRestaurantRegion)
+    plotButton.pack()
+    plotButton.place(relx=0.7, rely=0.69)
+
     # initialize the function for clear button
     def new_canvas():
         w = Canvas(expenseSearchWindow, width=500, height=400)
@@ -213,7 +231,7 @@ def expenseSearchWindow():
     # initialize the clear button
     clearButton = Button(expenseSearchWindow, text='Clear', command=new_canvas)
     clearButton.pack()
-    clearButton.place(relx=0.5, rely=0.69)
+    clearButton.place(relx=0.4, rely=0.69)
 
 
 def overallInformationWindow():

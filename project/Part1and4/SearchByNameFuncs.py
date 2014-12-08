@@ -8,7 +8,8 @@ def NameSearch(df, partial_name):
     :param partial_name: a string type
     :return: the selected rows of df with partial_name in the 'name' column, ignoring upper or lower case
     """
-
+    if partial_name == '$':
+        raise NameSearchNoResultError('Sorry, no result. Try another name ?')
     search_result = df[df['name'].str.contains(partial_name, case=False)]
     search_result = search_result[['name', 'city', 'state', 'stars']]
 
