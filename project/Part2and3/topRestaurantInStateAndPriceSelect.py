@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from exceptionClass import InputError
 
-f = pd.read_csv('yelp_restaurant_only.csv')
+f = pd.read_csv('yelp_restaurant_only_dataset.csv')
 
 def restaurantInStateandPrice(state, price, num_top):
 	'''
