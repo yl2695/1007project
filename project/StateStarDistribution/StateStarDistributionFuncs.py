@@ -120,7 +120,8 @@ def PlotPieChartForOneState(state):
 
     # Next, plot the pie chart
     patches, texts = plt.pie(star_count.values(), labels=star_count.keys(), labeldistance=1.05, colors=cs)
-    plt.legend(patches, pie_labels, loc=4)
+    plt.legend(patches, pie_labels, loc='upper right', bbox_to_anchor=(0.12, 1.), fontsize=9)
+
     plt.axis('equal')
     plt.title(state+' : Restaurant Star Distribution')
 

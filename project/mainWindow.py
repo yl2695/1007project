@@ -39,8 +39,8 @@ class mainWindow():
         self.popularRestaurantsButton = Button(text='Popular Restaurants', command=self.popularRestaurantsWindow)
         self.popularRestaurantsButton.place(relx=0.66, rely=0.33, anchor='center')
 
-        self.overallInformationButton = Button(text='Overall Information', command=self.overallInformationWindow)
-        self.overallInformationButton.place(relx=0.66, rely=0.66, anchor='center')
+        self.stateStarDistributionButton = Button(text='State Star Distribution', command=self.stateStarDistributionWindow)
+        self.stateStarDistributionButton.place(relx=0.66, rely=0.66, anchor='center')
 
 
     def nameSearchWindow(self):
@@ -190,56 +190,56 @@ class mainWindow():
         clearButton.place(relx=0.4, rely=0.69)
 
 
-    def overallInformationWindow(self):
+    def stateStarDistributionWindow(self):
         '''
         set up the forth sub window -- overall information window.
         '''
-        self.overallInformationWindow = Toplevel()
-        self.overallInformationWindow.geometry('{}x{}'.format(600, 600))
+        self.stateStarDistributionWindow = Toplevel()
+        self.stateStarDistributionWindow.geometry('{}x{}'.format(600, 600))
 
         # initialize the star distribution button which can show the overall star distribution of six states
-        starDistButton = Button(self.overallInformationWindow, text='Show the Star Distribution of Six States!', command=PlotStarDistribution)
+        starDistButton = Button(self.stateStarDistributionWindow, text='Show the Star Distribution of Six States!', command=PlotStarDistribution)
         starDistButton.pack()
         starDistButton.place(relx=0.2, rely=0.2)
 
-        promptLabel = Label(self.overallInformationWindow, text='Press the button to see the star distribution!')
+        promptLabel = Label(self.stateStarDistributionWindow, text='Press the button to see the star distribution!')
         promptLabel.pack()
         promptLabel.place(relx=0.2, rely=0.15)
 
         # initialize a state list box for user to see.
-        stateListbox = Listbox(self.overallInformationWindow)
+        stateListbox = Listbox(self.stateStarDistributionWindow)
         stateListbox.pack()
         stateListbox.place(relx=0.2, rely=0.4)
         for item in ['ON', 'EDH', 'MLN', 'WI', 'AZ', 'NV']:
             stateListbox.insert(END, item)
 
         # initialize a select state button for user to select a certain state they want to see
-        selectButtonLabel = Label(self.overallInformationWindow, text='Select a button to see the pie charts for the star distribution for that state!')
+        selectButtonLabel = Label(self.stateStarDistributionWindow, text='Select a button to see the pie charts for the star distribution for that state!')
         selectButtonLabel.pack()
         selectButtonLabel.place(relx=0.05, rely=0.33)
 
         # initialize every state's show button
-        buttonON = Button(self.overallInformationWindow, text='ON state', command=lambda x='ON':PlotPieChartForOneState(x))
+        buttonON = Button(self.stateStarDistributionWindow, text='ON state', command=lambda x='ON':PlotPieChartForOneState(x))
         buttonON.pack()
         buttonON.place(relx=0.5, rely=0.4)
 
-        buttonEDH = Button(self.overallInformationWindow, text='EDH state', command=lambda x='EDH':PlotPieChartForOneState(x))
+        buttonEDH = Button(self.stateStarDistributionWindow, text='EDH state', command=lambda x='EDH':PlotPieChartForOneState(x))
         buttonEDH.pack()
         buttonEDH.place(relx=0.5, rely=0.52)
 
-        buttonMLN = Button(self.overallInformationWindow, text='MLN state', command=lambda x='MLN':PlotPieChartForOneState(x))
+        buttonMLN = Button(self.stateStarDistributionWindow, text='MLN state', command=lambda x='MLN':PlotPieChartForOneState(x))
         buttonMLN.pack()
         buttonMLN.place(relx=0.7, rely=0.4)
 
-        buttonWI = Button(self.overallInformationWindow, text='WI state', command=lambda x='WI':PlotPieChartForOneState(x))
+        buttonWI = Button(self.stateStarDistributionWindow, text='WI state', command=lambda x='WI':PlotPieChartForOneState(x))
         buttonWI.pack()
         buttonWI.place(relx=0.5, rely=0.64)
 
-        buttonAZ = Button(self.overallInformationWindow, text='AZ state', command=lambda x='AZ':PlotPieChartForOneState(x))
+        buttonAZ = Button(self.stateStarDistributionWindow, text='AZ state', command=lambda x='AZ':PlotPieChartForOneState(x))
         buttonAZ.pack()
         buttonAZ.place(relx=0.7, rely=0.52)
 
-        buttonNV = Button(self.overallInformationWindow, text='NV state', command=lambda x='NV':PlotPieChartForOneState(x))
+        buttonNV = Button(self.stateStarDistributionWindow, text='NV state', command=lambda x='NV':PlotPieChartForOneState(x))
         buttonNV.pack()
         buttonNV.place(relx=0.7, rely=0.64)
 
