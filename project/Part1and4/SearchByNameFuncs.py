@@ -25,6 +25,11 @@ def NameSearch(df, partial_name):
 
 
 def plot3dDistribution(df):
+    '''
+    This function plot a 3d-distribution of stars according to the restaurants' latitude and longitude the user search
+    :param df: a dataframe
+    :return: a 3d-figure
+    '''
     latitudeRange = df['latitude']
     longitudeRange = df['longitude']
     starRange = df['stars']
