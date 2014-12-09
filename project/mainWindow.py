@@ -1,8 +1,8 @@
 from Tkinter import *
 import matplotlib.pyplot as plt
 import numpy as np
-from Part1and4.SearchByNameFuncs import *
-from Part1and4.PlotDistributionFuncs import *
+from SearchByName.SearchByNameFuncs import *
+from StateStarDistribution.StateStarDistributionFuncs import *
 import pandas as pd
 from Part2and3.topRestaurantInStateAndPriceSelect import *
 from Part2and3.topRestaurantsInStateSelect import *
@@ -272,7 +272,7 @@ class mainWindow():
         '''
         this function is set up for search restaurants window and its function is to clear the text in the window.
         '''
-        w = Canvas(self.nameSearchWindow, width=500, height=300)
+        w = Canvas(self.nameSearchWindow, width=500, height=500)
         w.pack()
         w.place(relx=0.2, rely=0.45)
 
