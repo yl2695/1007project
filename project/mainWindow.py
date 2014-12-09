@@ -67,15 +67,19 @@ class mainWindow():
         inputNameEntry.pack()
         inputNameEntry.place(relx=0.23, rely=0.35)
 
+        plot3dButton = Button(self.nameSearchWindow, text='3D plot', command=self.plot3D)
+        plot3dButton.pack()
+        plot3dButton.place(relx=0.8, rely=0.35)
+
         # initialize the search button
         searchButton = Button(self.nameSearchWindow, text='Search', command=self.showRestaurantSearchButton)
         searchButton.pack()
-        searchButton.place(relx=0.6, rely=0.35)
+        searchButton.place(relx=0.52, rely=0.35)
 
         # initialize the clear button
         clearButton = Button(self.nameSearchWindow, text='Clear', command=self.new_canvas_search_window)
         clearButton.pack()
-        clearButton.place(relx=0.75, rely=0.35)
+        clearButton.place(relx=0.66, rely=0.35)
 
 
     def popularRestaurantsWindow(self):
@@ -247,12 +251,21 @@ class mainWindow():
         mtext = self.ment.get()
 
         try:
-            mylabel = Label(self.nameSearchWindow, text=NameSearch(data, mtext))
+            mylabel = Label(self.nameSearchWindow, text=GetUsefulInfo(NameSearch(data, mtext))[:16])
             mylabel.place(relx=0.2, rely=0.5)
 
         except:
             errorlabel = Label(self.nameSearchWindow, text="Sorry, Find No Restaurant of This Name, please try another name")
             errorlabel.place(relx=0.2,rely=0.45)
+
+
+    def plot3D(self):
+        '''
+        this function is set up for search name window and its function is to show a 3D-figure of the distribution of stars according to the restaurants' latitude and longitude.
+        '''
+        mtext = self.ment.get()
+        df = NameSearch(data, mtext)[:51]
+        plot3dDistribution(df)
 
 
     def new_canvas_search_window(self):
