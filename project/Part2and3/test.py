@@ -25,11 +25,11 @@ class TestPart2(unittest.TestCase):
         '''
 		
         # state:'AZ' and num_top = 3 should be a correct user input and thus it is expected to return a DataFrame.
-        self.assertIsInstance(topRestaurantsInState(self.state1,self.num_top1), DataFrame)
+        self.assertIsInstance(topRestaurantsInState(self.state1, self.num_top1), DataFrame)
 		
         # state:'DS' or num_top = -3 are not right user input, thus it is expected to raise an exception.
-        self.assertRaises(InputError, topRestaurantsInState,self.state1, self.num_top2)
-        self.assertRaises(InputError, topRestaurantsInState,self.state2 ,self.num_top1)
+        self.assertRaises(InputError, topRestaurantsInState, self.state1, self.num_top2)
+        self.assertRaises(InputError, topRestaurantsInState, self.state2 ,self.num_top1)
 
 
 class TestPart3(unittest.TestCase):
