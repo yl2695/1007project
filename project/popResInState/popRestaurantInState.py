@@ -2,34 +2,9 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.dates as matdates
+from exceptionClass import InputError
 
-'''
-Load yelp_training_set_review dataset.
-Transform the date columns into readable format.
-Select only first four columns which are relevant to our analysis. 
-'''
 
-review = pd.read_csv('yelp_training_set_review.csv')
-review['date'] = pd.to_datetime(review['date'])
-review = review.ix[:,:5]
-
-'''
-Load yelp_training_set_business file.
-Select only 'business_id','name','state' columns which are relevant to our analysis.
-''' 
-
-business = pd.read_csv('yelp_training_set_business.csv')
-business = business[['business_id','name','state']]
-
-'''
-Merge review dataset with business dataset. 
-'''
-
-review = review.merge(business, on = 'business_id',how = 'left')
-
-# Drop the records where business_id is invalid.
-mask = [review['business_id']!='#NAME?', review['business_id'] !='#VALUE!']
-review = review[mask[0]&mask[1]]
 
 def popRestaurantInState(state, num_top):
 	
@@ -54,6 +29,30 @@ def popRestaurantInState(state, num_top):
 	subplots, this change would show on the plot title.
 	
 	'''
+	
+	
+	#Load yelp_training_set_review dataset.
+	#Transform the date columns into readable format.
+	#Select only first four columns which are relevant to our analysis. 
+
+	review = pd.read_csv('yelp_training_set_review.csv')
+	review['date'] = pd.to_datetime(review['date'])
+	review = review.ix[:,:5]
+
+	#Load yelp_training_set_business file.
+	#Select only 'business_id','name','state' columns which are relevant to our analysis.
+	
+
+	business = pd.read_csv('yelp_training_set_business.csv')
+	business = business[['business_id','name','state']]
+
+	#Merge review dataset with business dataset. 
+
+	review = review.merge(business, on = 'business_id',how = 'left')
+
+	# Drop the records where business_id is invalid.
+	mask = [review['business_id']!='#NAME?', review['business_id'] !='#VALUE!']
+	review = review[mask[0]&mask[1]]
 	
 	# First check if we get an state input in records.	
 	if state not in ['WI', 'AZ', 'NV', 'CA', 'ON', 'EDH', 'ELN', 'MLN', 'NY', 'KHL'] :
@@ -97,3 +96,4 @@ def popRestaurantInState(state, num_top):
 	plt.suptitle('Review stars changes for Top {} popular restaurant in {}.'.format(min(num_top,len(review_count)),state))
 	plt.show()
 	
+	return ids
