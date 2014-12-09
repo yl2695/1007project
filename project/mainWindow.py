@@ -19,17 +19,26 @@ class mainWindow():
         '''
 
         self.top = top
+
+        # set the width and height for the main window
         self.WIDTH = 950
         self.HEIGHT = 534
+
+        # set the background picture for the main window
         self.backImage = PhotoImage(file="yelp.gif")
         self.panel = Label(top, image=self.backImage)
         self.panel.pack(side='top', fill='both', expand='yes')
+
+        # set up four main buttons of the main window which stand for four main functions.
         self.nameSearchButton = Button(text='Name Search', command=self.nameSearchWindow)
         self.nameSearchButton.place(relx=0.33, rely=0.33, anchor='center')
+
         self.expenseSearchButton = Button(text='Expense Search', command=self.expenseSearchWindow)
         self.expenseSearchButton.place(relx=0.33, rely=0.66, anchor='center')
+
         self.popularRestaurantsButton = Button(text='Popular Restaurants', command=self.popularRestaurantsWindow)
         self.popularRestaurantsButton.place(relx=0.66, rely=0.33, anchor='center')
+
         self.overallInformationButton = Button(text='Overall Information', command=self.overallInformationWindow)
         self.overallInformationButton.place(relx=0.66, rely=0.66, anchor='center')
 
