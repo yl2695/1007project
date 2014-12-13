@@ -41,7 +41,7 @@ class mainWindow():
         self.popularRestaurantsButton = Button(text='Search Restaurants by Popularity', command=self.popularRestaurantsWindow)
         self.popularRestaurantsButton.place(relx=0.52, rely=0.33, anchor='center')
 
-        self.stateStarDistributionButton = Button(text="State's Restaurants' Stars Distribution", command=self.stateStarDistributionWindow)
+        self.stateStarDistributionButton = Button(text="Star Distribution for each state", command=self.stateStarDistributionWindow)
         self.stateStarDistributionButton.place(relx=0.52, rely=0.66, anchor='center')
 
         self.checkinTimeDistributionButton = Button(text="Restaurants' Checkin Time Distribution", command=self.checkinTimeDistributionWindow)
