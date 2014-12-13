@@ -275,7 +275,7 @@ class mainWindow():
         self.stateEntry = StringVar()
 
         stateLabel = Label(self.checkinTimeDistributionWindow, text="Please input the state whose overall restaurants' checkin numbers you want to see: ")
-        promptLabel = Label(self.checkinTimeDistributionWindow, text="You can input the folling states: WI, AZ, ON, EDH, MLN, KHL, NV")
+        promptLabel = Label(self.checkinTimeDistributionWindow, text="You can input the followng states: WI, AZ, ON, EDH, MLN, KHL, NV")
         statesEntry = Entry(self.checkinTimeDistributionWindow, textvariable=self.stateEntry)
         stateLabel.place(relx=0.1, rely=0.25)
         promptLabel.place(relx=0.1, rely=0.3)
